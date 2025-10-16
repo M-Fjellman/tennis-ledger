@@ -29,6 +29,35 @@ header {
     box-shadow: var(--box-shadow);
 }
 
+/* --- App Logo in Header --- */
+.app-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+.app-logo {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Adjust h1 margin if using a logo */
+.app-title-container h1 {
+    margin: 0; 
+}
+
+/* Mobile adjustments for logo */
+@media (max-width: 768px) {
+    .app-title-container {
+        justify-content: center; /* Center logo and title on mobile */
+    }
+
+    .app-logo {
+        height: 30px; /* Slightly smaller on mobile */
+    }
+}
+
 header h1 {
     margin: 0;
     color: var(--dark-gray);
@@ -388,4 +417,5 @@ thead {
     h2 {
         font-size: 1.4rem;
     }
+
 }
