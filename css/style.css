@@ -33,7 +33,7 @@ header {
 .app-title-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between logo and text */
+    gap: 10px;
 }
 
 .app-logo {
@@ -419,3 +419,4 @@ thead {
     }
 
 }
+
