@@ -8,12 +8,12 @@
   "description": "A personal ledger for tennis opponents.",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/192/857/857476.png",
+      "src": "tennis-ledger-logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/857/857476.png",
+      "src": "tennis-ledger-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
