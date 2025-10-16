@@ -1,0 +1,391 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --light-gray: #f8f9fa;
+    --medium-gray: #dee2e6;
+    --dark-gray: #343a40;
+    --font-family: 'Roboto', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--medium-gray);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--dark-gray);
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#opponent-list-container h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.opponent-card {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.opponent-card:hover {
+    transform: translateY(-3px);
+}
+
+.opponent-card h3 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.opponent-card-actions button, .primary-btn, .button-label {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.primary-btn, .button-label {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s;
+}
+.primary-btn:hover, .button-label:hover {
+    background-color: var(--primary-hover);
+}
+
+.edit-btn {
+    background-color: #ffc107; color: black;
+}
+.delete-btn {
+    background-color: var(--danger-color); color: white;
+}
+.edit-btn:hover { background-color: #e0a800; }
+.delete-btn:hover { background-color: var(--danger-hover); }
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#opponent-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+#opponent-form input[type="text"],
+#opponent-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    box-sizing: border-box; 
+    font-size: 1rem;
+}
+
+.modal-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.modal-actions #cancel-btn {
+    background-color: var(--medium-gray);
+    margin-left: 0.5rem;
+}
+
+/* Header actions */
+#export-data-btn {
+    background-color: #28a745;
+    color: white;
+}
+#export-data-btn:hover {
+    background-color: #218838;
+}
+
+/* For opponent.html */
+.detail-section {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+.detail-section h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+.detail-section ul {
+    list-style-type: '✓ ';
+    padding-left: 20px;
+}
+.detail-section li {
+    margin-bottom: 0.5rem;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--medium-gray);
+}
+thead {
+    background-color: var(--light-gray);
+}
+#add-match-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+#add-match-form input {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+}
+
+#tactics-controls {
+    margin-block-end: 2em;
+}
+
+#profile-section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#profile-section h2 {
+    margin-top: 0;
+}
+
+#profile-section label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+#profile-section textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+#profile-section button {
+    margin-top: 1rem;
+}
+
+#opponent-form select {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+}
+
+.opponent-style-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#mental-notes-display {
+    white-space: pre-wrap; /* Preserves line breaks from the textarea */
+    color: #555;
+}
+
+/* --- Loader Spinner Styles --- */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =============================================== */
+/* --- Mobile Responsiveness --- */
+/* =============================================== */
+
+@media (max-width: 768px) {
+    
+    /* --- General Adjustments --- */
+    body {
+        font-size: 16px; /* Ensure base font size is readable */
+    }
+
+    main {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    /* --- Header Adjustments --- */
+    header {
+        flex-direction: column; /* Stack title and actions vertically */
+        gap: 1rem; /* Add space between title and buttons */
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+
+    .header-actions {
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap if needed */
+        justify-content: center; /* Center the buttons */
+        gap: 0.5rem;
+    }
+
+    .header-actions button, 
+    .header-actions .button-label {
+        margin-left: 0; /* Remove fixed margin from buttons */
+        flex-grow: 1; /* Allow buttons to grow and fill space */
+    }
+
+    /* --- Opponent Card on Main Page --- */
+    .opponent-card {
+        flex-direction: column; /* Stack name and actions vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 1rem;
+    }
+
+    .opponent-card-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* Keep buttons aligned to the right */
+        gap: 0.5rem;
+    }
+    
+    .opponent-card-actions button,
+    .opponent-card-actions a {
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* --- Opponent Detail Page --- */
+    #add-match-form {
+        flex-direction: column; /* Stack form inputs vertically */
+        align-items: stretch; /* Make inputs full width */
+    }
+
+    #add-match-form button {
+        margin-top: 0.5rem;
+    }
+
+    /* --- Modal Window --- */
+    .modal-content {
+        padding: 1.5rem 1rem;
+        /* Allow modal to scroll on very small screens if content overflows */
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modal-actions button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* --- Font Size Adjustments --- */
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+}
